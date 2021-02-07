@@ -1,3 +1,5 @@
+package com.company;
+
 /**
  * Louis Alvarez
  * Finds the next higher and lower number that shares the same number of 1 bits
@@ -16,6 +18,8 @@ public class NextNumberBinary {
         int number = 10;
         StringBuilder numberBinary = toBinary(number); //StringBuilder array of number bits
         int numberOnes = countOnes(numberBinary); //Count of 1's from binary form
+        System.out.println("The default number is: " + number + " and its binary form: " + numberBinary);
+
 
         int larger = number; // next, higher number
         StringBuilder largerBinary;
@@ -24,13 +28,14 @@ public class NextNumberBinary {
         //increments starting from number + 1 to find a int that contains the same number of 1's in binary form
         //as number
         while(true){
-	        larger++;
-	        largerBinary = toBinary(larger);
+            larger++;
+            largerBinary = toBinary(larger);
 
-	        largerOnes = countOnes(largerBinary);
+            largerOnes = countOnes(largerBinary);
 
             if(numberOnes == largerOnes){
-                System.out.println("The next largest number: " + larger);
+                System.out.println("The next largest number: " + larger + " and its binary form: " + largerBinary);
+
                 break;
             }
         }
@@ -48,7 +53,7 @@ public class NextNumberBinary {
             shorterOnes = countOnes(shorterBinary);
 
             if(numberOnes == shorterOnes){
-                System.out.println("The next smallest number: " + shorter);
+                System.out.println("The next smallest number: " + shorter + " and its binary form: " + shorterBinary);
                 break;
             }
 
